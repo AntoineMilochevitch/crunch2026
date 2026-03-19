@@ -1,6 +1,7 @@
 <script lang="ts">
   import { userPoints } from '$lib/stores';
   import { User, Coins } from 'lucide-svelte';
+  import { base } from '$app/paths';
 </script>
 
 <header class="bg-white border-b border-gray-100 sticky top-0 z-50">
@@ -8,7 +9,7 @@
     <div class="flex justify-between items-center h-16">
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 overflow-hidden rounded-md">
-          <img src="/Orange_logo.svg.png" alt="Orange Logo" class="w-full h-full object-contain" />
+          <img src="{base}/Orange_logo.svg.png" alt="Orange Logo" class="w-full h-full object-contain" />
         </div>
         <div>
           <h1 class="text-xl font-bold text-gray-900 leading-none tracking-tight">Eco Digital</h1>
