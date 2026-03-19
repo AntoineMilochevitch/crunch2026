@@ -1,12 +1,17 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-static';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
-		// adapter-auto only supports some environments, see https://svelte.dev/docs/kit/adapter-auto for a list.
-		// If your environment is not supported, or you settled on a specific environment, switch out the adapter.
-		// See https://svelte.dev/docs/kit/adapters for more information about adapters.
-		adapter: adapter()
+		adapter: adapter({
+			// important pour GitHub Pages: évite les 404 au refresh en SPA
+			fallback: '404.html'
+		}),
+
+		// IMPORTANT: adapte "crunch2026" au nom EXACT du repo
+		paths: {
+			base: process.env.BASE_PATH ?? ''
+		}
 	},
 	vitePlugin: {
 		dynamicCompileOptions: ({ filename }) =>
